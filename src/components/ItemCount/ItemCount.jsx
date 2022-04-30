@@ -1,24 +1,19 @@
 import React, {useState} from 'react'
 
-function ItemCount(props) {
-    const [counter, setCounter] = useState(1);
+function ItemCount({stock, initial, onAdd}) {
+    const [counter, setCounter] = useState(initial);
     const substract = () =>{
-        if(counter > props.initial){
+        if(counter > initial){
             setCounter(counter - 1);
         }        
     }
     const add = () =>{
-        if(counter < props.stock){
+        if(counter < stock){
             setCounter(counter + 1);
         } 
     }
-    const onAdd = () =>{
-        if(counter > 1){
-            alert(`${counter} productos fueron agregados a tu carrito.`);
-        }else if(counter == 1){
-            alert(`${counter} producto fue agregado a tu carrito.`);
-        }
-        
+    const addToChart = () =>{
+        onAdd(counter);
     }
     return (
         <>
@@ -28,7 +23,7 @@ function ItemCount(props) {
                 <button onClick={add} type="button" class="btn btn-outline-primary">+</button>
             </div>
             <div class="d-flex justify-content-center">
-                <button class="btn btn-primary" type="submit" onClick={onAdd}>Agregar al carrito</button>
+                <button class="btn btn-primary" type="submit" onClick={addToChart}>Agregar al carrito</button>
             </div>
 
         </>

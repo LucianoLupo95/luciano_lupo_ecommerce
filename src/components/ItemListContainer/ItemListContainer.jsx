@@ -1,10 +1,16 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount'
 
-//Aca va el promise que se suma al estado
-
+const onAdd = (counter) =>{
+  if(counter > 1){
+    alert(`${counter} productos fueron agregados a tu carrito.`);
+  }else if(counter == 1){
+    alert(`${counter} producto fue agregado a tu carrito.`);
+  }
+}
 function ItemListContainer() {
   return (
-    <p>Estamos trabajando en brindarte las mejores propuestas</p>
+    <ItemCount stock={5} initial={1} onAdd={onAdd}/>
   )
 }
 

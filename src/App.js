@@ -13,7 +13,6 @@ function App() {
       <Item/>
       <NavBar/>
       <ItemListContainer/>
-      <ItemCount stock="5" initial="1"/>
     </div>
   );
 }

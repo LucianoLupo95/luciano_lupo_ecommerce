@@ -1,12 +1,8 @@
 import React from 'react'
 import { BsCart4 } from 'react-icons/bs'
 
-const iconStyle = {
-    color: '#28a745',
-    fontSize: '2.7em',
-  };
-export const CartWidget = () => {
+export const CartWidget = (fontSize, color) => {
     return (
-    <BsCart4 style={iconStyle}/>
+      <BsCart4 style={{fontSize: fontSize, color: color}}/>
     )
 }

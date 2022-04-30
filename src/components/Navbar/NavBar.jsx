@@ -78,7 +78,7 @@ const Navbar = () => {
           <button className="btn btn-outline-success" type="submit">
               Buscar
           </button>
-          <CartWidget />
+          <CartWidget color='#28a745' fontSize="color"/>
         </div>
       </div>
       
