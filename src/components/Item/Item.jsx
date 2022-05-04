@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react'
-
-function Item() {
-    const propiedades = [{ id: "01", name: "Machain", description: "Casa en Machain", stock: "01" }];
-    useEffect(()=>{
-        const consulta = new Promise((resolve, reject)=>{
-            setTimeout(()=>{
-                resolve(propiedades)
-            },3000)
-        }).then(res => console.log(res)).catch((err) => console.log(err))
-    })
+import React from 'react'
+//Layout de tarjetas Item
+const Item = ({nombre, imagen, descripcion}) =>{
     return (
-        <p></p>
+        <> 
+        <div className="card" style={{width: "18rem"}}>
+            <img className="card-img-top" src={imagen} alt="Card image cap"/>
+            <div className="card-body">
+                <h5 className="card-title">{nombre}</h5>
+                <p className="card-text">{descripcion}</p>
+                <a href="#" className="btn btn-primary">Ver más</a>
+            </div>
+        </div>
+    </>
     )
 }
 

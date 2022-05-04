@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          De Leo <br/>Propiedades
+          Anata <br/>Pet Shop
         </a>
         <button
           className="navbar-toggler"
@@ -27,7 +27,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Propiedades
+                Productos
               </a>
             </li>
             <li className="nav-item dropdown">

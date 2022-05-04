@@ -1,10 +1,20 @@
 import React from 'react'
+import Item from '../Item/Item'
 
-//Se le pasa como parametro el state. Es como un creador de cards. El que usa MAP
-
-function ItemList() {
+const ItemList = ({productos}) => {
     return (
-        <div>ItemList</div>
+        <>
+        {
+            productos.length > 0 ? productos.map(producto=> (
+            <Item
+                imagen={producto.imagen}
+                nombre={producto.nombre}
+                descripcion={producto.descripcion}
+            />
+            )) : <h2>Cargando...</h2>
+        }
+
+    </>
     )
 }
 
