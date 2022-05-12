@@ -5,13 +5,11 @@ const ItemList = ({productos}) => {
     return (
         <>
         {
-            productos.length > 0 ? productos.map(producto=> (
+            productos.length > 0 ? productos.map((producto)=> 
             <Item
-                imagen={producto.imagen}
-                nombre={producto.nombre}
-                descripcion={producto.descripcion}
+                productos={producto}
             />
-            )) : <h2>Cargando...</h2>
+            ) : <h2>Cargando...</h2>
         }
 
     </>

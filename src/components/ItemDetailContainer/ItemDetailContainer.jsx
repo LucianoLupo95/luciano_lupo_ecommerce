@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
+import ItemDetail from '../ItemDetail/ItemDetail';
+
 
 
 //Tiene todos los Items a renderizar
 
 
-const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
+const ItemDetailContainer = () => {
+  const [producto, setProducto] = useState([]);
 
   const onAdd = (counter) =>{
     if(counter > 1){
@@ -48,27 +51,22 @@ const ItemListContainer = () => {
       descripcion:"Canil para transportar gatos y perros"
     }
   ]
-
+  const {id} = useParams();
+  const choosedProd = data.find((product) => product.id == id);
   
   useEffect(() => {
     const promesa = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(data)
+        resolve(choosedProd)
       }, 2000);
     })
     promesa.then((res)=>{
-      setProductos(res)
-    }).catch((err)=>
-      console.log(err)
-    ).then(()=>console.log(productos)
-    )
-    return () => {
-        
-      }
+      setProducto(res)
+    });
     }, [])  
   return (
     <div>
-      <ItemList productos={productos}/>
+      <ItemDetail producto={producto}/>
       <ItemCount stock={5} initial={1} onAdd={onAdd}/>
     </div>
   )

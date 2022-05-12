@@ -1,14 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import NavBar from './components/Navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import CartContext from './context/CartContext';
+import Rutas from './routes/Rutas';
 
 function App() {
   return (
+
     <div>
-      <NavBar/>
-      <ItemListContainer/>
+      <CartContext>
+        <Rutas/>
+        <ItemListContainer/>
+      </CartContext>
     </div>
   );
 }

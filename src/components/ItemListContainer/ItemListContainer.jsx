@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 
 
@@ -8,14 +7,6 @@ import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
-
-  const onAdd = (counter) =>{
-    if(counter > 1){
-      alert(`${counter} productos fueron agregados a tu carrito.`);
-    }else if(counter == 1){
-      alert(`${counter} producto fue agregado a tu carrito.`);
-    }
-  }
 
   const data = [
     {
@@ -70,7 +61,6 @@ const ItemListContainer = () => {
   return (
     <div>
       <ItemList productos={productos}/>
-      <ItemCount stock={5} initial={1} onAdd={onAdd}/>
     </div>
   )
 }
