@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 function ItemCount({stock, initial, onAdd}) {
     const [counter, setCounter] = useState(initial);
+    
     const substract = () =>{
         if(counter > initial){
             setCounter(counter - 1);

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 
@@ -10,15 +9,6 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState([]);
-
-  const onAdd = (counter) =>{
-    if(counter > 1){
-      alert(`${counter} productos fueron agregados a tu carrito.`);
-    }else if(counter == 1){
-      alert(`${counter} producto fue agregado a tu carrito.`);
-    }
-  }
-
   const data = [
     {
       id:1,
@@ -67,7 +57,7 @@ const ItemDetailContainer = () => {
   return (
     <div>
       <ItemDetail producto={producto}/>
-      <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+      
     </div>
   )
 }
