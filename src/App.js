@@ -8,10 +8,8 @@ function App() {
   return (
 
     <div>
-      <CartContext>
         <Rutas/>
-        <ItemListContainer/>
-      </CartContext>
+        {/* <ItemListContainer/> */}
     </div>
   );
 }
