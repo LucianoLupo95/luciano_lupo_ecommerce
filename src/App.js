@@ -9,7 +9,6 @@ function App() {
 
     <div>
         <Rutas/>
-        {/* <ItemListContainer/> */}
     </div>
   );
 }

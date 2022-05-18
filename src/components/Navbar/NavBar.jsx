@@ -1,12 +1,15 @@
 import React from "react";
 import { CartWidget } from "../CartWidget/CartWidget";
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Anata <br/>Pet Shop
-        </a>
+        <Link to="/" className="text-decoration-none">        
+          <a className="navbar-brand" href="#">
+            Anata <br/>Pet Shop
+          </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,50 +24,29 @@ const Navbar = () => {
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Inicio
-              </a>
+              <Link to="/" className="text-decoration-none">
+                <a className="nav-link active" aria-current="page" href="#">
+                  Inicio
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Productos
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Buscar por zona
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Lanús
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Remedios de Escalada
-                  </a>
-                </li>
-              </ul>
+              <Link to="/products" className="text-decoration-none">
+                <a className="nav-link" href="#">
+                  Productos
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#"
-                tabIndex="-1"
-              >
-                Sobre Nosotros
-              </a>
+              <Link to="/AboutUs" className="text-decoration-none">
+                <a
+                  className="nav-link"
+                  href="#"
+                  tabIndex="-1"
+                >
+                  Sobre Nosotros
+                </a>
+              </Link>
             </li>
           </ul>
           <form className="d-flex">

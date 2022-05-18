@@ -9,7 +9,10 @@ const ItemList = ({productos}) => {
             <Item
                 productos={producto}
             />
-            ) : <h2>Cargando...</h2>
+            ) : <>
+                <h2 class="display-3 text-center">Anata Pet Shop, todo lo que necesitas para tu mascota</h2>
+                <h3 class="lead">Cargando...</h3>
+            </>
         }
 
     </>
