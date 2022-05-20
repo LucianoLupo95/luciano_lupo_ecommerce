@@ -1,8 +1,13 @@
 import React from 'react'
 import { BsCart4 } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
-export const CartWidget = (fontSize, color) => {
+export const CartWidget = () => {
     return (
-      <BsCart4 style={{fontSize: fontSize, color: color}}/>
+      <>
+        <Link to="/cart">
+          <BsCart4 color="forestgreen" size={40}/>
+        </Link>
+      </>
     )
 }

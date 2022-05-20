@@ -49,18 +49,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Buscar"
-              aria-label="Search"
-            />
-          </form>
-          <button className="btn btn-outline-success" type="submit">
-              Buscar
-          </button>
-          <CartWidget color='#28a745' fontSize="color"/>
+          <CartWidget/>
         </div>
       </div>
       

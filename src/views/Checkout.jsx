@@ -1,9 +1,10 @@
 import React from 'react'
+import Form from '../components/Form/Form'
 
 const Checkout = () => {
   return (
     <>
-        <h1>Checkout</h1>
+        <Form/>
     </>
   )
 }
