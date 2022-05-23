@@ -15,7 +15,7 @@ const CartContext = ({children}) => {
     // } 
     const addToCart = (product, quantity) =>{
         setCounter(counter + quantity);
-        setCart([...cart, {product, quantity}]) 
+        setCart([...cart, {product, quantity}]);
     }
   return (
     <GlobalContext.Provider value={{cart, setCart, counter, setCounter, addToCart}}>
