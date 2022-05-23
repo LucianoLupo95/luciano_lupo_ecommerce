@@ -4,7 +4,7 @@ import { GlobalContext } from '../../context/CartContext'
 const Cart = () => {
     const {cart, counter} = useContext(GlobalContext)
     console.log("Objeto");
-    console.log(cart)
+    console.log(cart);
     console.log("Propiedad");
     console.log(cart[0]);
     return (
