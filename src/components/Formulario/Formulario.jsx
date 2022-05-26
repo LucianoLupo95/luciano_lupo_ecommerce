@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const Formulario = () => {
     const [form, setForm] = useState({
         buyer:{
             email:"",
@@ -43,4 +43,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default Formulario
