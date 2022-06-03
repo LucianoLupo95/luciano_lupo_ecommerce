@@ -3,10 +3,11 @@ import { GlobalContext } from '../../context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 //Layout de tarjetas Item
 const ItemDetail = ({producto}) =>{
+    console.log(producto + "HOLIS");
     const {addToCart} = useContext(GlobalContext)
     const [quantity, setQuantity] = useState()
     // const [state, setState] = useState(producto)
-    let stock = producto.cantidad;
+    let stock = producto.stock;
     const onAdd = (quantity) => {
       setQuantity(quantity);
     };
