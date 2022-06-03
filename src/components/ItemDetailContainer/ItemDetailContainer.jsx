@@ -1,51 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
-// import { db } from '../../services/firebase'
-// import { doc, getDoc } from "firebase/firestore"
+import { db } from '../../service/firebase';
+import { collection, doc, getDoc, getDocs, query} from 'firebase/firestore';
+
+const ItemDetailCointainer = ({ id }) => {
+
+  const [product, setProduct] = useState([]);
+
+  const getProduct = async (tipo) => {
+    const products = collection(db, 'productos')
+    try {
+        var q = query(products)
+      const data = await getDocs(q)
+      const productoEncontrado = products.find(item => item.id === id)
+      setProduct(productoEncontrado)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getProduct();  
+  }, [])  
 
 
-const ItemDetailContainer = (id) => {
-  console.log(id);
-  // const [producto, setProducto] = useState([]);
-
-  // // const getProductById = async () => {
-
-  // //   const item = doc(db, 'productos', id)
-
-  // //   try {
-  // //       const docSnapshot = await getDoc(item)
-  // //       if (docSnapshot.exists()) {
-  // //         setProducto({id: docSnapshot.id, ...docSnapshot.data()})
-  // //       }
-  // //   } catch (error) {
-  // //       console.log(error);
-  // //   }
-  // // };
-  // // useEffect(() => {
-  // //   getProductById();      
-  // // }, [])  
-
-  // const {id} = useParams();
-  // const choosedProd = data.find((product) => product.id == id);
-  
-  // useEffect(() => {
-  //   const promesa = new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve(choosedProd)
-  //     }, 2000);
-  //   })
-  //   promesa.then((res)=>{
-  //     setProducto(res)
-  //   });
-  //   }, [])  
   return (
-    <div>
-      <p>ITEM Detail</p>
-      {/* <ItemDetail producto={producto}/> */}
-      
+    <div className='itemDetailContainer'>
+        {product ? 
+            <ItemDetail product={product} /> 
+        : 
+          <p>Cargando...</p>     // spinner
+        }
     </div>
   )
 }
 
-export default ItemDetailContainer
+export default ItemDetailCointainer;

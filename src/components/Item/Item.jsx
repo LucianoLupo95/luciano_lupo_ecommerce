@@ -10,7 +10,6 @@ const Item = ({productos}) =>{
                 <h5 className="card-title">{productos.nombre}</h5>
                 <p className="card-text">{productos.descripcion}</p>
                 <Link to={`/Item/${productos.id}`} className="btn btn-primary">Ver más</Link>
-                
             </div>
         </div>
     </>
